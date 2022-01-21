@@ -1,0 +1,11 @@
+name|type|data|command|depend|seed|path|time|size|bytes|format|iteration|parent|children|seconds|warnings|error
+raw_data_file|stem|23216d07cdeba705|8a3f96b3359fdec0|ef46db3751d8e999|2110307107|Data/raw-data.csv|t18995.5935978973s|fb2fa2d532542735|541|file|vector|||0.002||
+my_data|stem|cbeaeb2fb8eb3f91|e49be1bbd78be44c|86c6f90eb2b44d8a|-1878874315||t19013.7621152767s|5113d0056c90d5c1|518|rds|vector|||0.003||
+plot_obs|stem|89fbcdf2e1ba9d40|82927ff535ecb6cb|eeecdcdbfabdc9ef|-1005960786||t19013.7621160611s|3359bf05477e5075|269|rds|vector|||0.061||
+lm_fit|stem|4d2e08af1fa0d0d3|5ed81bd9b4dc86c0|4534ab1b21073f63|-1812269390||t19013.7621161741s|db390dc5ac81ea18|2203|rds|vector|||0.004||
+load_glob_env|function|e3f7187e15c9d3d6||||||||||||||
+script_list|object|87923f782e50494c||||||||||||||
+get_lm_fit|function|f79fdd0c2d09af81||||||||||||||
+get_plot_obs|function|5575c42aa939e676||||||||||||||
+get_my_data|function|84125f705ec8234e||||||||||||||
+tar_load_all|function|01545861edbd1ced||||||||||||||
