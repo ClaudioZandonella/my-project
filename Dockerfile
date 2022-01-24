@@ -6,7 +6,6 @@ FROM rocker/rstudio:4.1.2
     
 # Copy project files
 COPY . /home/rstudio/My-project
-RUN chown -R rstudio:rstudio /home/rstudio/My-project
 
 # Install renv
 ENV RENV_VERSION 0.14.0
@@ -17,3 +16,13 @@ RUN R -e "remotes::install_github('rstudio/renv@${RENV_VERSION}')"
 # Install packages
 WORKDIR /home/rstudio/My-project
 RUN R -e "renv::restore()"
+
+# Run targets
+RUN R -e "targets::tar_make(script = 'Analysis/Targets-workflow.R', store = 'Analysis/_targets')"
+
+# Render report
+RUN R -e "rmarkdown::render(input = 'Documents/Report.Rmd')"
+
+# Change ownership
+RUN chown -R rstudio:rstudio /home/rstudio/
+

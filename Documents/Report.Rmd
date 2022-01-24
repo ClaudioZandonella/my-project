@@ -1,0 +1,51 @@
+---
+title: "Report Analysis"
+author: "ARCA"
+date: "1/4/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# Path to _targets/ is defined in the _targets.yaml file
+# targets::tar_config_set(store = "../Analysis/_targets")
+
+# List all scripts in R/
+tryCatch(
+    script_list <- list.files("../R", full.names = TRUE),
+    error = function(x){
+      script_list <- list.files("R", full.names = TRUE)
+      })
+
+# Source scripts
+invisible(sapply(script_list, source))
+
+tar_load_all()
+```
+
+## Descriptive Statistics
+
+Summary of the data
+```{r}
+summary(my_data)
+```
+
+Distribution observations
+```{r}
+get_plot_obs(data = my_data)
+```
+
+## Inferential Statistics
+```{r}
+summary(lm_fit)
+```
+
+
+
+
+
+
+
+
+
+
