@@ -27,5 +27,4 @@ get_lm_fit <- function(data){
   return(res)
 }
 
-tictoc::tic()
 #-----
